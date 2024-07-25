@@ -1,24 +1,9 @@
 describe('demo form', () => {
-  it('access demo page', () => {
-    cy.visit('/')
+  it.only('access demo page', () => {
+    cy.accessDemoPage()
+})
 
-    cy.contains('Start travel business,')
-      .should('be.visible')
-    
-    cy.get('a small')
-      .contains('Try Demo')
-      .should('be.visible')
-      .click()
-
-    cy.get('h1')
-      .contains('Demonstration')
-      .should('be.visible')
-  })
-
-  it.only('complete demo request form', () => {
-    // let firstNumber = 0
-    // let secondNumber = 0
-
+  it('complete demo request form', () => {
     cy.visit('/demo')
 
     // preenchendo os campos
@@ -54,6 +39,6 @@ describe('demo form', () => {
     });
 
     cy.contains('button', 'Submit').click()
-    cy.contains(' Thank you!').should('be.visible')
+    cy.contains('Thank you!').should('be.visible')
   })
 })
