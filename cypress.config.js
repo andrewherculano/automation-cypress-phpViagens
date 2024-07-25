@@ -5,6 +5,7 @@ module.exports = defineConfig({
     baseUrl: 'https://phptravels.com/',
     viewportWidth: 1280,
     viewportHeight: 720,
+    defaultCommandTimeout: 10000,
     setupNodeEvents(on, config) {},
   },
 });
